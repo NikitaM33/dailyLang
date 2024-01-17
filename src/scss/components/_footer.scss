@@ -1,0 +1,49 @@
+.footer {
+  width: 100%;
+  min-height: 14.375rem;
+  background: $accent;
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+
+    &__logo {
+      width: 30%;
+      height: 2rem;
+
+      & img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+  }
+
+  &__left {
+    & ul {
+      & li {
+        margin-bottom: 0.81rem;
+        & a {
+          color: $white;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+
+  &__right {
+    margin-top: 2rem;
+  }
+}
+
+.copy {
+  display: flex;
+  justify-content: center;
+  font-weight: 500;
+  font-size: 1.125rem;
+  color: $white;
+}

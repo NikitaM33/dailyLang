@@ -1,0 +1,113 @@
+@import '../mixins/card';
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  width: 100%;
+
+  @media screen and (max-width: $tablet) {
+    flex-direction: column;
+  }
+}
+
+.main {
+  width: 100%;
+}
+
+.courses {
+  & h1 {
+    position: relative;
+    margin-bottom: 4.56rem;
+
+    & span {
+      background: $green;
+      margin: 0 0 0 -0.6rem;
+      padding: 0 1rem;
+      border-radius: 10rem;
+      white-space: nowrap;
+    }
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(23.75rem, 28%));
+    grid-gap: 3.75rem;
+    justify-content: center;
+
+    & a {
+      display: block;
+    }
+  }
+}
+
+.card {
+  max-width: 23.8rem;
+  background: $accent url('../../assets/A\ -\ Z.svg') no-repeat 7.5rem 1.5rem /
+    13.6rem 9.6rem;
+
+  @include card;
+
+  &:nth-child(2n) {
+    background: $accent url('../../assets/[\ æ\ ].svg') no-repeat 7.5rem 1.5rem /
+      13.6rem 9.6rem;
+  }
+}
+
+.decor {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  z-index: -1;
+
+  &__halfCirlce,
+  &__star {
+    position: absolute;
+
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: right;
+    }
+  }
+
+  &__halfCirlce {
+    top: 14rem;
+    right: 0;
+    width: 20rem;
+    height: 20rem;
+  }
+
+  &__star {
+    top: calc(100vw - 100%);
+    right: 3vw;
+    width: 9.6rem;
+    height: 9.6rem;
+  }
+
+  @media screen and (max-width: 1132px) {
+    &__halfCirlce {
+      display: none;
+    }
+
+    &__star {
+      top: calc(100vw - 80%);
+    }
+  }
+
+  @media screen and (max-width: $tablet) {
+    &__star {
+      top: calc(100vw - 50%);
+      right: -6vw;
+    }
+  }
+
+  @media screen and (max-width: $mobileL) {
+    &__star {
+      top: calc(100vw - 10%);
+      right: -25vw;
+    }
+  }
+}
